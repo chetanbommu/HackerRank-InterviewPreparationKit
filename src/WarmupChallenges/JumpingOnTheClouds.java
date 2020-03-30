@@ -13,17 +13,16 @@ public class JumpingOnTheClouds {
 		int lastStep = c.length - 1;
 		
 		while(currentStep != lastStep) {
-			if(currentStep +2 <= lastStep && c[currentStep + 2] == 0) {
+			if(currentStep+2 <= lastStep && c[currentStep + 2] == 0) {
 				currentStep = currentStep + 2;
-				minimumNumberOfSteps += 1;
 			} else {
 				/* No need to check if this step is 0. 
 				 * Because we are told there is always a solution.  
 				 * If 2nd step from current is not 0, then next step should definitely be 0. i.e.,safe cloud.
 				 * */
 				currentStep = currentStep + 1;
-				minimumNumberOfSteps += 1;
 			}
+			minimumNumberOfSteps += 1;
 		}
 		return minimumNumberOfSteps;
     }
